@@ -15,9 +15,11 @@ public class Main {
         char charX = (char) x;
 
         String s = "abcd";
+        int stringLen = s.length();
         char[] chars = s.toCharArray();
 
         char[] arr = {'c', 'd', '7'};
+        int arrLen = arr.length;
         String strArr = String.valueOf(arr);
     }
 }
