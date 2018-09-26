@@ -16,12 +16,15 @@ public class BubbleSort {
             swapHappened = false;
             for (int j = 0; j < n - 1 - i; j++) {
                 if (arr[j] > arr[j + 1]) {
-                    int buf = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = buf;
+                    swap(arr, j, j + 1);
                     swapHappened = true;
                 }
             }
         }
+    }
+    static void swap(int[] arr, int i, int j) {
+        int buf = arr[j];
+        arr[j] = arr[i];
+        arr[i] = buf;
     }
 }
