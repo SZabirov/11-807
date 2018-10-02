@@ -2,11 +2,10 @@ package com.company;
 
 public class RacingCar {
     //поле (field)
-    int maxSpeed;
+    private int maxSpeed;
     int weight;
     String color;
-    int currentSpeed;
-
+    private int currentSpeed;
 
     RacingCar(String color, int maxSpeed, int weight) {
         this.color = color;
@@ -24,6 +23,18 @@ public class RacingCar {
             currentSpeed += kmH;
         } else {
             System.err.println("Too much");
+        }
+    }
+
+    int getCurrentSpeed() {
+        return currentSpeed;
+    }
+
+    void setMaxSpeed(int maxSpeed) {
+        if (maxSpeed > 0) {
+            this.maxSpeed = maxSpeed;
+        } else {
+            System.err.println("Некорректная скорость: <= 0");
         }
     }
 }
