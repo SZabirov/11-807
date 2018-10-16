@@ -17,7 +17,7 @@ public class FileLexicalDictionary {
     private final static int LETTERS_NUMBER = 26;
 
     private boolean isSorted = false;
-    int wordsCount = 0;
+    private int wordsCount = 0;
 
     public FileLexicalDictionary(String ... words) throws IOException {
         this();
