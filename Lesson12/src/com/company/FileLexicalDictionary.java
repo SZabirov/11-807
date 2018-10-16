@@ -6,6 +6,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+/**
+ * Словарь. Позволяет добавить слово в конец списка.
+ * А также может отсортировать добавленные ранее слова
+ * в алфаитном морядке. Поддерживаются только строчные
+ * латинские буквы в словах.
+ */
 public class FileLexicalDictionary {
     private final static String INPUT_FILE_NAME = "in.txt";
     private final static int LETTERS_NUMBER = 26;
@@ -21,14 +27,16 @@ public class FileLexicalDictionary {
     }
 
     public FileLexicalDictionary() throws IOException {
-        deleteInputFile();
+        clearInputFile();
     }
 
     /**
      * Adds specified word to a dictionary
      */
     public void add(String word) throws IOException {
-        PrintWriter pw = new PrintWriter(new FileWriter(new File(INPUT_FILE_NAME), true));
+        File f = new File(INPUT_FILE_NAME);
+        FileWriter fw = new FileWriter(f, true);
+        PrintWriter pw = new PrintWriter(fw);
         pw.println(word);
         pw.close();
         wordsCount++;
@@ -92,7 +100,9 @@ public class FileLexicalDictionary {
                 pw.println(s);
             }
         }
-        //todo add Scanners closing
+        for (Scanner sc : scanners) {
+            sc.close();
+        }
         pw.close();
     }
 
@@ -109,10 +119,11 @@ public class FileLexicalDictionary {
         }
         while (sc.hasNextLine()) {
             String word = sc.nextLine();
+            //fixme исправить сравнение aa и a
             char c = k < word.length() ? word.charAt(k) : 'a';
             pws[c - 'a'].println(word);
         }
-        for (PrintWriter pw : pws) {
+        for (PrintWriter pw : pws) {//Для каждого PrintWriter'a
             pw.close();
         }
     }
@@ -134,9 +145,9 @@ public class FileLexicalDictionary {
     }
 
     /**
-     * Deletes input file
+     * Cleans input file
      */
-    private void deleteInputFile() throws IOException {
+    private void clearInputFile() throws IOException {
         PrintWriter pw = new PrintWriter(new File(INPUT_FILE_NAME));
         pw.close();
     }

@@ -2,7 +2,13 @@ package com.company;
 
 import java.util.Arrays;
 
+/**
+ * Словарь. Позволяет добавить слово в конец списка.
+ * А также может отсортировать добавленные ранее слова
+ * в алфаитном морядке.
+ */
 public class ArrayLexicalDictionary {
+    //final делает переменную неизменяемой
     private final static int DEFAULT_ARRAY_CAPACITY = 10;
     private final static int DEFAULT_INCREASE_TIMES = 2;
 

@@ -5,9 +5,14 @@ import java.io.IOException;
 public class FileLexicalDictionaryUsageTest {
     public static void main(String[] args) throws IOException {
         FileLexicalDictionary fld = new FileLexicalDictionary();
+        FileLexicalDictionary fld1 = new FileLexicalDictionary("aqq", "abc", "cde");
         fld.add("lorem");
         fld.add("ipsum");
         fld.add("dolor");
+        fld.add("aa");
+        fld.add("a");
+        fld.add("bbb");
+        fld.add("b");
         fld.add("sit");
         fld.add("amet");
         fld.add("consectetur");
