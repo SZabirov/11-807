@@ -1,8 +1,8 @@
 package com.company;
 
 public class Main {
-
     public static void main(String[] args) {
-	// write your code here
+        Shape c = new Circle(13);
+        ((Circle)c).roll();
     }
 }
