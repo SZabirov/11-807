@@ -8,5 +8,6 @@ public interface SearchEngine {
      * @param sources providers of the sources to search through
      * @return list of TextProviders sorted by relevance
      */
-    List<TextProvider> getSortedByRelevanceList(TextProvider target, List<TextProvider> sources);
+    List<TextProvider> getSortedByRelevanceList(TextProvider target,
+                                                List<TextProvider> sources);
 }
