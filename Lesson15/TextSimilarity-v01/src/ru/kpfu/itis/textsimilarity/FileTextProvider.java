@@ -5,7 +5,10 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class FileTextProvider implements TextProvider {
-    private File input;
+    //    Logger logger = new Logger();
+    BetterLogger logger = BetterLogger.getInstance();
+
+    protected File input;
 
     public FileTextProvider(File input) {
         this.input = input;
@@ -21,6 +24,7 @@ public class FileTextProvider implements TextProvider {
                 sb.append(sc.nextLine());
             }
         } catch (FileNotFoundException e) {
+            logger.error("Файл не был найден");
             throw new IllegalArgumentException(e);
         } finally {
             if (sc != null) {
