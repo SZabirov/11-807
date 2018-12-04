@@ -5,7 +5,7 @@ public interface IntList {
     int size();
 
     //возвращает true, если такой элемент есть в списк
-    boolean contains();
+    boolean contains();//FIXME: метод должен принимать int e - элемент, вхождение которого проверяем
 
     //добавляет новый элемент в конец списка
     void add(int e);
