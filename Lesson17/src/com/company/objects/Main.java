@@ -1,5 +1,6 @@
 package com.company.objects;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
@@ -11,5 +12,15 @@ public class Main {
         oal.add("0987");
         String s = (String) oal.get(2);
 
+//        Iterator iter = oal.iterator();
+//        while (iter.hasNext()) {
+//            String str = (String) iter.next();
+//            System.out.println(str.toUpperCase());
+//        }
+
+        for(Object o : oal) {
+            String str = (String) o;
+            System.out.println(str.toUpperCase());
+        }
     }
 }

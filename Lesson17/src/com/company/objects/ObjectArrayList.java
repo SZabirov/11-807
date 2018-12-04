@@ -1,6 +1,6 @@
 package com.company.objects;
 
-public class ObjectArrayList {
+public class ObjectArrayList implements Iterable {
     private Object[] elements;
     private static final int DEFAULT_CAPACITY = 10;
     private int count = 0;
@@ -15,5 +15,23 @@ public class ObjectArrayList {
 
     Object get(int index) {
         return elements[index];
+    }
+
+    @Override
+    public java.util.Iterator iterator() {
+        return new MyIter();
+    }
+
+    class MyIter implements java.util.Iterator {
+        private int currentIndex = 0;
+        @Override
+        public boolean hasNext() {
+            return currentIndex < count;
+        }
+
+        @Override
+        public Object next() {
+            return elements[currentIndex++];
+        }
     }
 }
