@@ -1,5 +1,7 @@
 package com.company.objects;
 
+import java.util.Iterator;
+
 public class ObjectArrayList implements Iterable {
     private Object[] elements;
     private static final int DEFAULT_CAPACITY = 10;
@@ -18,11 +20,11 @@ public class ObjectArrayList implements Iterable {
     }
 
     @Override
-    public java.util.Iterator iterator() {
+    public Iterator iterator() {
         return new MyIter();
     }
 
-    class MyIter implements java.util.Iterator {
+    class MyIter implements Iterator {
         private int currentIndex = 0;
         @Override
         public boolean hasNext() {
