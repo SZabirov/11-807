@@ -1,5 +1,6 @@
 package com.company.brackets;
 
+//реализация Стека (принцип LIFO)
 public class Stack {
     private char[] arr;
     private int n = 0;//число эл-тов
