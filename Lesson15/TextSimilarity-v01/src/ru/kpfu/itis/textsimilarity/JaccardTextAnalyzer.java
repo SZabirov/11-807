@@ -9,6 +9,12 @@ public class JaccardTextAnalyzer implements TextAnalyzer {
 
     @Override
     public double analyze(TextProvider te1, TextProvider te2) {
+        if (te1 instanceof FileTextProvider) {
+            ////
+        }
+        if (te1 instanceof FileWithNameTextProvider) {
+
+        }
         List<String> list1 = tokenize(te1.getText());
         List<String> list2 = tokenize(te2.getText());
         logger.info("Токенизация проведения");
