@@ -30,7 +30,7 @@
 	- filter
 	- forEach
 
-#Homework34
+# Homework34
 
 1.	Написать метод
 	```
@@ -41,5 +41,7 @@
 	List<SimpleStudent> list = SuperBestAwesomeFramework.getMany(SimpleStudent.class, 100, "John", 18);
 	```
 
+# Homework 36
 
+1. Задача про треды (где сумма массива в нескольких потоках)
 
